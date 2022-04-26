@@ -86,5 +86,5 @@ git clone https://aur.archlinux.org/pikaur.git
 cd pikaur
 makepkg -fsri
 cd
-pikaur -S emacs-gcc-wayland-devel-bin
-mkdir dl dox imp music pix pub code
+pikaur -S emacs-gcc-wayland-devel-bin ly
+systemctl enable ly
