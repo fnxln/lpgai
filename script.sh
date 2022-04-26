@@ -75,7 +75,7 @@ exit
 #part3
 printf '\033c'
 cd $HOME
-git clone --separate-git-dir=$HOME/.dotfiles https://github.com/fnxln/dotfiles.git tmpdotfiles
+git clone --recurse-submodules --separate-git-dir=$HOME/.dotfiles https://github.com/fnxln/dotfiles.git tmpdotfiles
 rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
 rm -r tmpdotfiles
 
