@@ -56,7 +56,8 @@ pacman -S --noconfirm sway alacritty rsync htop nautilus \
     neofetch neovim mpv qbittorrent git zathura zathura-pdf-mupdf \
     bluez bluez-utils xdg-desktop-portal xdg-desktop-portal-wlr \
     pipewire pipewire-media-session pipewire-alsa pipewire-pulse \
-    fish dash pulsemixer waybar
+    fish dash pulsemixer waybar noto-fonts noto-fonts-emoji ttf-linux-libertine\
+    ttf-dejavu
 
 
 systemctl enable NetworkManager.service
