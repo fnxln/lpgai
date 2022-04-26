@@ -20,7 +20,7 @@ if [[ $answer = s ]] ; then
   mkfs.vfat -F 32 $efipartition
 fi
 mount $partition /mnt
-pacstrap /mnt base base-devel linux linux-firmware networkamanger refind
+pacstrap /mnt base base-devel linux linux-firmware networkmanager refind
 genfstab -U /mnt >> /mnt/etc/fstab
 sed '1,/^#part2$/d' `basename $0` > /mnt/arch_install2.sh
 chmod +x /mnt/arch_install2.sh
@@ -52,16 +52,14 @@ mount $efipartition /boot/efi
 refind-install
 
 pacman -S --noconfirm sway alacritty rsync htop nautilus \
-    firefox discord code ntfs-3g arc-gtk-theme ffmpegm \
+    firefox discord code ntfs-3g arc-gtk-theme ffmpeg \
     neofetch neovim mpv qbittorrent git zathura zathura-pdf-mupdf \
     bluez bluez-utils xdg-desktop-portal xdg-desktop-portal-wlr \
     pipewire pipewire-media-session pipewire-alsa pipewire-pulse \
-    fish dash
+    fish dash pulsemixer 
 
 
 systemctl enable NetworkManager.service
-rm /bin/sh
-ln -s dash /bin/sh
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 echo "Enter Username: "
 read username
